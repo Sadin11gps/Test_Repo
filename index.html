@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Earning ~×•RDS TEAM•×~</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        /* Google Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+        /* CSS Variables for Theming */
+        :root {
+            --font-family: 'Nunito', sans-serif;
+            --bg-color: #121212; /* Dark theme background */
+            --secondary-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --subtle-text: #b0b0b0;
+            --primary-color: #3498db; /* Blue */
+            --accent-color: #f39c12; /* Orange */
+            --sparkle-color: #e74c3c; /* Red/Sparkle */
+            --success-color: #2ecc71; /* Green */
+            --danger-color: #e74c3c; /* Red */
+            --glow-shadow: 0 0 10px rgba(231, 76, 60, 0.4);
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 70px; /* Space for fixed bottom navigation */
+        }
+        
+        /* Utility Classes */
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-3 { margin-top: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .p-4 { padding: 1rem; }
+        .text-center { text-align: center; }
+        .font-bold { font-weight: 700; }
+        .hidden { display: none !important; }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Page Styling */
+        .page {
+            display: none;
+            padding-top: 10px;
+            min-height: calc(100vh - 80px); /* Adjust based on nav height */
+        }
+        .page.active {
+            display: block;
+        }
+
+        /* Card and Box Styles */
+        .card, .referral-box {
+            background-color: var(--secondary-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 15px;
+        }
+        
+        /* Profile Section */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 20px;
+        }
+        .user-photo-placeholder {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary-color);
+        }
+        .user-info .user-name {
+            font-size: 1.4rem;
+            margin: 0;
+            color: var(--sparkle-color);
+        }
+        .user-info .user-id-text {
+            font-size: 0.8rem;
+            color: var(--subtle-text);
+            margin: 0;
+        }
+        
+        /* Balance Section */
+        .balance-section {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .balance-card {
+            flex: 1;
+            padding: 15px;
+            margin: 0 5px;
+            border-radius: var(--border-radius);
+            background: #252525;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+        }
+        .balance-label {
+            font-size: 0.8rem;
+            color: var(--subtle-text);
+            margin-bottom: 5px;
+        }
+        .balance-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success-color);
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-card {
+            background-color: #252525;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border-left: 5px solid var(--accent-color);
+        }
+        .stat-icon {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--sparkle-color);
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--subtle-text);
+        }
+
+        /* Buttons and Inputs */
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background-color: #2980b9;
+        }
+        .btn-primary:disabled {
+            background-color: #5d6d7e;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        /* Referral Input */
+        .referral-input-group {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        #referral-link-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 8px 0 0 8px;
+            background-color: #2c2c2c;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .btn-copy {
+            padding: 10px 15px;
+            border-radius: 0 8px 8px 0;
+            background-color: var(--accent-color);
+            transition: background-color 0.3s;
+        }
+        .btn-copy:hover {
+            background-color: #e67e22;
+        }
+        
+        /* Task Page Specific */
+        .ad-button-container {
+            margin-top: 20px;
+        }
+        
+        /* Withdraw Page Specific */
+        .wallet-select-group {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        .wallet-select-group label {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #252525;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid #252525;
+            transition: border-color 0.3s;
+        }
+        .wallet-select-group input[type="radio"]:checked + label {
+            border-color: var(--primary-color);
+            background-color: #1a1a1a;
+        }
+        .wallet-select-group input[type="radio"] {
+            margin-right: 10px;
+        }
+        .wallet-select-group span {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--subtle-text);
+        }
+        form select, form input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #2c2c2c;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+        
+        .referral-check-box {
+            border: 1px solid #444;
+            border-left: 5px solid var(--danger-color);
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #1a1a1a;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* History Page Specific */
+        .history-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #1e1e1e;
+            border-top: 1px solid #333;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: var(--subtle-text);
+            padding: 10px 0;
+            flex: 1;
+            font-size: 0.7rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-btn i {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .nav-btn.active {
+            color: var(--sparkle-color);
+            text-shadow: 0 0 5px rgba(231, 76, 60, 0.8);
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transition: opacity 0.3s;
+        }
+
+        .modal-content {
+            background-color: var(--secondary-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 400px;
+            box-shadow: var(--glow-shadow);
+            text-align: center;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            background-color: #2c2c2c;
+            border: 1px solid #444;
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            resize: none;
+        }
+        
+        /* Loader for Ad */
+        .loader {
+            border: 5px solid #333;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+        <div id="home-page" class="page active">
+            <div class="profile-header">
+                <img id="user-photo" src="https://placehold.co/60x60/3498db/ffffff?text=L" alt="User Photo" class="user-photo-placeholder">
+                <div class="user-info">
+                    <h1 class="user-name" id="user-name">Loading...</h1>
+                    <p class="user-id-text">ID: <span id="user-id">Loading...</span></p>
+                </div>
+            </div>
+
+            <div class="balance-section mb-4">
+                <div class="balance-card">
+                    <div class="balance-label">মোট মেইন ব্যালেন্স</div>
+                    <div class="balance-value" id="main-balance">0.00 TK</div>
+                </div>
+                <div class="balance-card">
+                    <div class="balance-label">মোট রেফার ব্যালেন্স</div>
+                    <div class="balance-value" id="refer-balance">0.00 TK</div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users stat-icon"></i>
+                    <div class="stat-value" id="total-referrals">0</div>
+                    <div class="stat-label">মোট রেফারেল</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-eye stat-icon"></i>
+                    <div class="stat-value" id="daily-ads-watched">0</div>
+                    <div class="stat-label">আজকের কাজ</div>
+                </div>
+            </div>
+
+            <div class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color); margin-bottom: 10px;"><i class="fas fa-share-alt mr-2"></i> রেফারেল লিংক</h3>
+                <div class="referral-input-group">
+                    <input type="text" id="referral-link-input" value="Loading Referral Link..." readonly>
+                    <button id="copy-referral-btn" class="btn-copy">
+                        <i class="fas fa-copy"></i> কপি
+                    </button>
+                </div>
+                <button id="generate-message-btn" class="btn-primary mt-3" style="background-color: #8e44ad;">
+                    <i class="fas fa-lightbulb mr-2"></i> রেফারেল মেসেজ তৈরি করুন (Gemini AI)
+                </button>
+            </div>
+        </div>
+        
+        <div id="task-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;">দৈনিক কাজ (Ads)</h2>
+
+            <div class="card mt-4 text-center">
+                <h3 style="color: var(--accent-color);"><i class="fas fa-ad"></i> বিজ্ঞাপন দেখুন</h3>
+                <p style="color: var(--subtle-text); margin-top: 10px;">প্রতিটি বিজ্ঞাপনের জন্য আপনি পাবেন 5 TK।</p>
+                
+                <div class="stat-card mt-3">
+                    <i class="fas fa-calendar-day stat-icon"></i>
+                    <div class="stat-value" id="task-ad-count">0</div>
+                    <div class="stat-label">আজ দেখা হয়েছে</div>
+                </div>
+
+                <div class="ad-button-container mt-4">
+                    <button id="watch-ad-btn" class="btn-primary" style="background-color: var(--success-color);">
+                        <i class="fas fa-video mr-2"></i> বিজ্ঞাপন দেখুন (Watch Ad)
+                    </button>
+                    <p style="font-size: 0.8rem; color: var(--subtle-text); margin-top: 10px;">(বিজ্ঞাপন দেখতে ৩ সেকেন্ড অপেক্ষা করতে হবে)</p>
+                </div>
+            </div>
+            
+            <div id="ad-container" class="mt-4">
+                 </div>
+        </div>
+        
+        <div id="withdraw-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;">উত্তোলন</h2>
+
+            <div class="balance-card mt-4">
+                <div class="balance-label">মোট উত্তোলনের যোগ্য ব্যালেন্স</div>
+                <div class="balance-value" id="total-withdrawable-balance" style="color: var(--sparkle-color);">0.00 TK</div>
+            </div>
+            
+            <div id="referral-check-block" class="referral-check-box mt-4">
+                <p id="referral-check-text">উইথড্রয়ালের শর্ত যাচাই করা হচ্ছে...</p>
+            </div>
+
+            <p id="ref-status-notice" class="hidden" style="color: var(--danger-color); font-size: 0.9rem; text-align: center; margin-bottom: 15px;">
+                <i class="fas fa-exclamation-triangle mr-2"></i> শর্ত পূরণ না হওয়া পর্যন্ত উত্তোলন সম্ভব নয়।
+            </p>
+
+            <form id="withdraw-form" class="card">
+                <h3 style="color: var(--primary-color); margin-bottom: 20px;"><i class="fas fa-wallet"></i> উত্তোলনের ফর্ম</h3>
+                
+                <label for="wallet-select" style="font-weight: bold; color: var(--text-color);">কোন ব্যালেন্স থেকে উত্তোলন করবেন?</label>
+                <div class="wallet-select-group">
+                    <input type="radio" id="wallet-main" name="wallet" value="main" checked style="display: none;">
+                    <label for="wallet-main">
+                        <i class="fas fa-money-bill-wave mr-2" style="color: var(--success-color);"></i>
+                        <div>
+                            <span>মেইন ব্যালেন্স</span>
+                            <p style="font-size: 0.7rem; color: var(--subtle-text); margin: 0;" id="main-balance-withdraw">0.00 TK</p>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="wallet-refer" name="wallet" value="refer" style="display: none;">
+                    <label for="wallet-refer">
+                        <i class="fas fa-gift mr-2" style="color: var(--sparkle-color);"></i>
+                        <div>
+                            <span>রেফার ব্যালেন্স</span>
+                            <p style="font-size: 0.7rem; color: var(--subtle-text); margin: 0;" id="refer-balance-withdraw">0.00 TK</p>
+                        </div>
+                    </label>
+                </div>
+                <input type="hidden" id="wallet-select" value="main"> 
+
+
+                <label for="amount-input">উত্তোলনের পরিমাণ (ন্যূনতম 500 TK)</label>
+                <input type="text" id="amount-input" placeholder="টাকার পরিমাণ লিখুন (যেমন: 100, 200)">
+
+                <label for="method-select">মাধ্যম নির্বাচন করুন</label>
+                <select id="method-select">
+                    <option value="bkash">Bkash Personal</option>
+                    <option value="nagad">Nagad Personal</option>
+                    <option value="rocket">Rocket Personal</option>
+                </select>
+
+                <label for="number-input">আপনার নাম্বার</label>
+                <input type="text" id="number-input" placeholder="আপনার ফোন নাম্বার দিন">
+
+                <button type="submit" id="withdraw-submit-btn" class="btn-primary mt-4" disabled>
+                    <i class="fas fa-paper-plane mr-2"></i> উত্তোলনের অনুরোধ পাঠান
+                </button>
+            </form>
+        </div>
+
+        <div id="history-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;">উত্তোলনের ইতিহাস</h2>
+            <div id="history-list" class="history-list mt-4">
+                <div class="card p-4 text-center">
+                    <i class="fas fa-spinner fa-spin fa-2x" style="color: var(--primary-color);"></i>
+                    <p class="mt-2" style="color: var(--subtle-text);">ইতিহাস লোড হচ্ছে...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="support-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;">সাপোর্ট ও সাহায্য</h2>
+            <div class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color);"><i class="fas fa-question-circle"></i> সাধারণ প্রশ্ন</h3>
+                <p style="color: var(--subtle-text); margin-top: 10px;">আমাদের অ্যাপ সম্পর্কে সাধারণ প্রশ্নের উত্তর জানতে বা কোনো সমস্যা রিপোর্ট করতে নিচের বাটনটি ব্যবহার করুন।</p>
+                <a id="support-bot-link" href="#" target="_blank" class="btn-primary" style="background-color: #2980b9;">
+                    <i class="fab fa-telegram-plane mr-2"></i> সরাসরি সাপোর্ট মেসেজ
+                </a>
+            </div>
+            
+            <div class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color);"><i class="fas fa-info-circle"></i> গুরুত্বপূর্ণ তথ্য</h3>
+                <ul style="list-style: none; padding: 0; color: var(--subtle-text); font-size: 0.9rem;">
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle mr-2" style="color: var(--accent-color);"></i> প্রতি রেফারে আপনি পাবেন <span style="color: var(--sparkle-color); font-weight: bold;">30 TK</span>।</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle mr-2" style="color: var(--accent-color);"></i> উত্তোলনের জন্য <span style="color: var(--sparkle-color); font-weight: bold;">20 জন রেফার</span> আবশ্যিক।</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle mr-2" style="color: var(--accent-color);"></i> আপনার ডেটা সম্পূর্ণরূপে নিরাপদ।</li>
+                </ul>
+            </div>
+            
+            <div class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color);"><i class="fas fa-link"></i> গুরুত্বপূর্ণ লিঙ্ক</h3>
+                <ul style="list-style: none; padding: 0; color: var(--subtle-text); font-size: 0.9rem;">
+                    <li style="margin-bottom: 8px;"><i class="fas fa-bullhorn mr-2" style="color: var(--primary-color);"></i> <a id="channel-link-anchor" href="#" target="_blank" style="color: var(--primary-color); text-decoration: none;">অফিসিয়াল চ্যানেল</a></li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-users-cog mr-2" style="color: var(--primary-color);"></i> <a id="group-link-anchor" href="#" target="_blank" style="color: var(--primary-color); text-decoration: none;">সাপোর্ট গ্রুপ</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="gemini-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 style="color: var(--sparkle-color);"><i class="fas fa-lightbulb"></i> রেফারেল ম্যাসেজ তৈরি</h3>
+                    <button id="close-modal-btn" style="background: none; border: none; color: var(--text-color); font-size: 1.5rem; cursor: pointer;">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p style="color: var(--subtle-text); font-size: 0.9rem; margin-bottom: 10px;">
+                        আপনার জন্য আকর্ষণীয় একটি রেফারেল ম্যাসেজ তৈরি করা হয়েছে।
+                    </p>
+                    <textarea id="generated-message" readonly>
+                        এখানে ম্যাসেজ লোড হবে...
+                    </textarea>
+                    <button id="copy-generated-btn" class="btn-primary mt-3 btn-copy">
+                        <i class="fas fa-copy"></i> কপি করুন
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="loading-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="loader"></div>
+                <p style="color: var(--text-color); margin-top: 15px;">বিজ্ঞাপন লোড হচ্ছে... অনুগ্রহ করে অপেক্ষা করুন।</p>
+            </div>
+        </div>
+
+    </div> <div class="bottom-nav">
+        <button class="nav-btn active" data-page="home-page">
+            <i class="fas fa-home"></i> হোম
+        </button>
+        <button class="nav-btn" data-page="task-page">
+            <i class="fas fa-clipboard-list"></i> কাজ
+        </button>
+        <button class="nav-btn" data-page="withdraw-page">
+            <i class="fas fa-wallet"></i> উত্তোলন
+        </button>
+        <button class="nav-btn" data-page="history-page">
+            <i class="fas fa-history"></i> ইতিহাস
+        </button>
+        <button class="nav-btn" data-page="support-page">
+            <i class="fas fa-headset"></i> সাপোর্ট
+        </button>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
+    <script src='//libtl.com/sdk.js' data-zone='10203066' data-sdk='show_10203066'></script> 
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // CRITICAL FIX 1: Robust check for Telegram WebApp environment
+            const tg = window.Telegram && window.Telegram.WebApp;
+            const ALL_USERS_KEY = 'rds_team_all_users';
+
+            if (!tg || !tg.initDataUnsafe || !tg.initDataUnsafe.user) {
+                document.querySelector('.container').innerHTML = '<div class="card p-4 mt-4 text-center error-message" style="background-color: #4b1b1b; color: var(--danger-color);"><h2>অ্যাপ লোড ত্রুটি</h2><p>অনুগ্রহ করে এই অ্যাপটি টেলিগ্রামের মধ্যে থাকা বাটনে ক্লিক করে খুলুন।</p></div>';
+                document.body.className = 'light-theme';
+                document.querySelector('.bottom-nav').classList.add('hidden');
+                return;
+            }
+            
+            // --- Configuration (আপনার তথ্য দিয়ে পরিবর্তন করা হয়েছে) ---
+            const BOT_TOKEN = "8405675295:AAESmK2zNcKgL93jEFYBo73fJUVKL2SmOOc";
+            const BOT_USERNAME = "vote_rds_v3_bot"; 
+            const ADMIN_CHAT_ID = "7702378694";
+            const CHANNEL_LINK = "https://t.me/amrrdsteam";
+            const GROUP_LINK = "https://t.me/smart_network81_group";
+            const DAILY_AD_LIMIT = 20;
+            const AD_POINT = 5; // Points per ad (changed from 2 points to 5 TK as seen in UI text)
+            const REFERRAL_BONUS_TK = 30.00; // প্রতি রেফারে 30 টাকা
+            const MIN_WITHDRAW_AMOUNT = 500;
+            const MIN_REFERRALS_FOR_WITHDRAW = 20; // উইথড্র করার জন্য প্রয়োজনীয় রেফার সংখ্যা
+            
+            const userId = tg.initDataUnsafe.user.id.toString();
+            let userState = {};
+
+            // Gemini Config (for referral message generation)
+            const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=`;
+            const API_KEY = "AIzaSyAXcTBjDSR××××××××××××××"; // Canvas runtime provides this
+
+            // --- DOM Elements ---
+            const userPhotoElem = document.getElementById('user-photo');
+            const userNameElem = document.getElementById('user-name');
+            const userIdElem = document.getElementById('user-id');
+            const mainBalanceElem = document.getElementById('main-balance');
+            const referBalanceElem = document.getElementById('refer-balance');
+            const totalReferralsElem = document.getElementById('total-referrals'); 
+            const dailyAdsWatchedElem = document.getElementById('daily-ads-watched');
+            const taskAdCountElem = document.getElementById('task-ad-count');
+            const referralLinkElem = document.getElementById('referral-link-input');
+            const copyReferralBtn = document.getElementById('copy-referral-btn');
+            const generateMessageBtn = document.getElementById('generate-message-btn');
+            const watchAdBtn = document.getElementById('watch-ad-btn');
+            const withdrawForm = document.getElementById('withdraw-form');
+            const withdrawSubmitBtn = document.getElementById('withdraw-submit-btn');
+            const amountInput = document.getElementById('amount-input');
+            const methodSelect = document.getElementById('method-select');
+            const numberInput = document.getElementById('number-input');
+            const historyListElem = document.getElementById('history-list');
+            const loadingModal = document.getElementById('loading-modal');
+            const geminiModal = document.getElementById('gemini-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const generatedMessageTextarea = document.getElementById('generated-message');
+            const copyGeneratedBtn = document.getElementById('copy-generated-btn');
+            const supportBotLink = document.getElementById('support-bot-link');
+            const channelLinkAnchor = document.getElementById('channel-link-anchor');
+            const groupLinkAnchor = document.getElementById('group-link-anchor');
+            const totalWithdrawableBalanceElem = document.getElementById('total-withdrawable-balance');
+            const referralCheckBlock = document.getElementById('referral-check-block');
+            const referralCheckText = document.getElementById('referral-check-text');
+            const refStatusNotice = document.getElementById('ref-status-notice');
+            const mainBalanceWithdraw = document.getElementById('main-balance-withdraw');
+            const referBalanceWithdraw = document.getElementById('refer-balance-withdraw');
+            const walletSelectHidden = document.getElementById('wallet-select');
+            
+            // --- Core Functions ---
+
+            // CRITICAL FIX 2: Added utility for exponential backoff for fetch
+            const MAX_RETRIES = 3;
+            const fetchWithRetry = async (url, options, retries = 0) => {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response;
+                } catch (error) {
+                    if (retries < MAX_RETRIES) {
+                        const delay = Math.pow(2, retries) * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return fetchWithRetry(url, options, retries + 1);
+                    }
+                    console.error("Fetch failed after multiple retries:", error);
+                    throw error;
+                }
+            };
+            
+            const loadState = () => {
+                let allUsers = JSON.parse(localStorage.getItem(ALL_USERS_KEY) || '{}');
+                userState = allUsers[userId] || {
+                    id: userId,
+                    name: tg.initDataUnsafe.user.username || tg.initDataUnsafe.user.first_name || `User${userId}`,
+                    username: tg.initDataUnsafe.user.username,
+                    is_bot: tg.initDataUnsafe.user.is_bot || false,
+                    points: 0, // Main Balance
+                    referral_points: 0, // Refer Balance
+                    daily_ads_watched: 0,
+                    last_ad_date: new Date().toDateString(),
+                    referrals: [], // Array of referred user IDs
+                    history: [],
+                    referred_by: new URLSearchParams(window.location.search).get('start_ref') || null
+                };
+                
+                // CRITICAL FIX 3: Check and apply referral bonus on first load
+                if (userState.referred_by && !userState.initial_referral_processed) {
+                    const referrerId = userState.referred_by;
+                    let referrerState = allUsers[referrerId];
+                    
+                    if (referrerState) {
+                        // Check if the current user ID is not already in the referrer's list
+                        if (!referrerState.referrals.includes(userId)) {
+                            referrerState.referrals.push(userId);
+                            referrerState.referral_points = (referrerState.referral_points || 0) + REFERRAL_BONUS_TK;
+                            allUsers[referrerId] = referrerState; // <--- Referrer's state is saved
+                            
+                            // Mark current user as processed
+                            userState.initial_referral_processed = true; 
+                            
+                            tg.showAlert(`অভিনন্দন! আপনি ${referrerState.name}-এর রেফারেল লিঙ্কে এসেছেন। আপনার রেফারার ${REFERRAL_BONUS_TK} TK বোনাস পেয়েছেন।`);
+                            
+                        } else {
+                             // Already registered as a referral, just mark as processed to prevent future checks
+                             userState.initial_referral_processed = true; 
+                        }
+                    }
+                }
+
+                // Daily reset for ads
+                const today = new Date().toDateString();
+                if (userState.last_ad_date !== today) {
+                    userState.daily_ads_watched = 0;
+                    userState.last_ad_date = today;
+                }
+
+                // *** FIX: Current user's state must be saved back to allUsers as well, 
+                // *** especially after referral processing (initial_referral_processed, referred_by).
+                // *** It was missing in the original code, causing the bug.
+                allUsers[userId] = userState; 
+
+                localStorage.setItem(ALL_USERS_KEY, JSON.stringify(allUsers));
+            };
+
+            const saveState = () => {
+                let allUsers = JSON.parse(localStorage.getItem(ALL_USERS_KEY) || '{}');
+                allUsers[userId] = userState;
+                localStorage.setItem(ALL_USERS_KEY, JSON.stringify(allUsers));
+                // console.log("State Saved:", userState);
+            };
+
+            const updateUI = () => {
+                // Profile & Home
+                const userFirstName = tg.initDataUnsafe.user.first_name || "ব্যবহারকারী";
+                const userLastName = tg.initDataUnsafe.user.last_name || "";
+                userNameElem.textContent = `${userFirstName} ${userLastName}`.trim();
+                userIdElem.textContent = userId;
+                
+                // Update Photo (Telegram WebApp does not provide photo URL directly, but keeping the placeholder logic)
+                // userPhotoElem.src = tg.initDataUnsafe.user.photo_url || userPhotoElem.src;
+                
+                const mainBalance = userState.points.toFixed(2);
+                const referBalance = userState.referral_points.toFixed(2);
+
+                mainBalanceElem.textContent = `${mainBalance} TK`;
+                referBalanceElem.textContent = `${referBalance} TK`;
+                mainBalanceWithdraw.textContent = `${mainBalance} TK`;
+                referBalanceWithdraw.textContent = `${referBalance} TK`;
+                totalReferralsElem.textContent = userState.referrals.length;
+                dailyAdsWatchedElem.textContent = userState.daily_ads_watched;
+                
+                // Referral Link (must be generated using the correct format)
+                const referralLink = `https://t.me/${BOT_USERNAME}/app?startapp=start_ref${userId}`;
+                referralLinkElem.value = referralLink;
+                
+                // Task Page
+                taskAdCountElem.textContent = `${userState.daily_ads_watched} / ${DAILY_AD_LIMIT}`;
+                if (userState.daily_ads_watched >= DAILY_AD_LIMIT) {
+                    watchAdBtn.disabled = true;
+                    watchAdBtn.textContent = "আজকের কাজ শেষ";
+                } else {
+                    watchAdBtn.disabled = false;
+                    watchAdBtn.textContent = "বিজ্ঞাপন দেখুন (Watch Ad)";
+                }
+                
+                // Withdraw Page
+                const totalEligibleBalance = userState.points + userState.referral_points;
+                totalWithdrawableBalanceElem.textContent = `${totalEligibleBalance.toFixed(2)} TK`;
+                
+                const isReferralConditionMet = userState.referrals.length >= MIN_REFERRALS_FOR_WITHDRAW;
+                
+                if (isReferralConditionMet) {
+                    referralCheckText.innerHTML = `<i class="fas fa-check-circle mr-2" style="color: var(--success-color);"></i> অভিনন্দন! আপনার ${MIN_REFERRALS_FOR_WITHDRAW} জন রেফারেল সম্পূর্ণ হয়েছে।`;
+                    referralCheckBlock.style.borderLeft = `5px solid var(--success-color)`;
+                    refStatusNotice.classList.add('hidden');
+                    withdrawSubmitBtn.disabled = false;
+
+                } else {
+                    referralCheckText.innerHTML = `<i class="fas fa-times-circle mr-2" style="color: var(--danger-color);"></i> উত্তোলনের জন্য আরো <span style="font-weight: bold;">${MIN_REFERRALS_FOR_WITHDRAW - userState.referrals.length} জন রেফার</span> প্রয়োজন।`;
+                    referralCheckBlock.style.borderLeft = `5px solid var(--danger-color)`;
+                    refStatusNotice.classList.remove('hidden');
+                    withdrawSubmitBtn.disabled = true;
+                }
+                
+                // Update history
+                renderHistory();
+                
+                // Update support links
+                supportBotLink.href = `https://t.me/${BOT_USERNAME}`;
+                channelLinkAnchor.href = CHANNEL_LINK;
+                groupLinkAnchor.href = GROUP_LINK;
+
+                // Listen for radio button changes to update the hidden input
+                document.querySelectorAll('input[name="wallet"]').forEach(radio => {
+                    radio.addEventListener('change', (e) => {
+                        walletSelectHidden.value = e.target.value;
+                    });
+                });
+            };
+            
+            const renderHistory = () => {
+                const history = userState.history.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort newest first
+                historyListElem.innerHTML = '';
+
+                if (history.length === 0) {
+                    historyListElem.innerHTML = `
+                        <div class="card p-4 text-center">
+                            <i class="fas fa-box-open fa-2x" style="color: var(--subtle-text);"></i>
+                            <p class="mt-2" style="color: var(--subtle-text);">এখন পর্যন্ত কোনো উত্তোলনের অনুরোধ নেই।</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                history.forEach(item => {
+                    const statusColor = item.status === 'Approved' ? 'var(--success-color)' : 
+                                        item.status === 'Approved' ? 'var(--success-color)' : 'var(--success-color)';
+                    
+                    const statusIcon = item.status === 'Approved' ? 'fa-check' : 
+                                       item.status === 'Approved' ? 'fa-check-circle' : 'fa-check-circle';
+                    
+                    const listItem = document.createElement('div');
+                    listItem.className = 'card';
+                    listItem.style.borderLeft = `5px solid ${statusColor}`;
+                    listItem.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h4 style="margin: 0; color: ${statusColor}; font-weight: 700;">${item.amount.toFixed(2)} TK</h4>
+                                <p style="font-size: 0.8rem; color: var(--subtle-text); margin: 5px 0 0;">
+                                    ${item.method} (${item.number})
+                                </p>
+                                <p style="font-size: 0.7rem; color: #666; margin: 2px 0 0;">
+                                    ${new Date(item.date).toLocaleString('bn-BD', { dateStyle: 'medium', timeStyle: 'short' })}
+                                </p>
+                            </div>
+                            <div class="text-right">
+                                <p style="font-size: 0.9rem; font-weight: 600; color: ${statusColor};">
+                                    <i class="fas ${statusIcon} mr-1"></i> ${item.status}
+                                </p>
+                                <p style="font-size: 0.7rem; color: var(--subtle-text);">
+                                    (${item.wallet === 'main' ? 'মেইন ব্যালেন্স' : 'রেফার ব্যালেন্স'})
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                    historyListElem.appendChild(listItem);
+                });
+            };
+
+            // --- Handlers ---
+            
+            const handleWatchAd = () => {
+    if (userState.daily_ads_watched >= DAILY_AD_LIMIT) {
+        tg.showAlert("আজকের জন্য আপনার দৈনিক কাজের সীমা পূর্ণ হয়েছে।");
+        return;
+    }
+
+    // 1️⃣ বিজ্ঞাপন লোড হচ্ছে popup দেখাই
+    loadingModal.classList.remove('hidden');
+    watchAdBtn.disabled = true;
+
+    // 2️⃣ Monetag বিজ্ঞাপন চালু করাই
+    try {
+        if (window.show_10203066) {
+            window.show_10203066();
+        }
+    } catch (error) {
+        console.error("Ad Error:", error);
+    }
+
+    // 3️⃣ 15 সেকেন্ড অপেক্ষা
+    setTimeout(() => {
+        loadingModal.classList.add('hidden');
+
+        userState.points += AD_POINT;
+        userState.daily_ads_watched += 1;
+
+        saveState();
+        updateUI();
+
+        tg.HapticFeedback.notificationOccurred('success');
+        tg.showAlert(`বিজ্ঞাপন দেখা সম্পূর্ণ! আপনি ${AD_POINT.toFixed(2)} TK পেয়েছেন।`);
+
+        watchAdBtn.disabled = false;
+
+    }, 30000);  // ⬅️ 15 Seconds
+};
+            
+            // CRITICAL FIX 4: Implemented Gemini API call for referral message generation
+            const handleGenerateReferralMessage = async () => {
+                geminiModal.classList.remove('hidden');
+                generatedMessageTextarea.value = "Gemini AI ম্যাসেজ তৈরি করছে... অনুগ্রহ করে অপেক্ষা করুন।";
+                copyGeneratedBtn.disabled = true;
+
+                const referrerName = tg.initDataUnsafe.user.first_name || "একজন বন্ধু";
+                const referralLink = referralLinkElem.value;
+                
+                const systemPrompt = `Act as an enthusiastic and persuasive Bengali community leader. You must generate a highly engaging, concise, single-paragraph message in BENGALI (Bangla script) to convince friends to join the 'RDS TEAM Earning Mini App'. The message MUST include: 
+                1. The referrer's name: "${referrerName}".
+                2. Mention the benefits: Free sign-up, easy daily tasks, and a high referral bonus (30 TK).
+                3. A clear Call-to-Action with the following link: ${referralLink}. 
+                4. Use a friendly, encouraging, and exciting tone. DO NOT include any numbered or bulleted lists.`;
+
+                const userQuery = `Generate the Bengali referral message for the RDS TEAM Earning Mini App.`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                try {
+                    const response = await fetchWithRetry(GEMINI_API_URL + API_KEY, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "Gemini মেসেজ তৈরি করতে ব্যর্থ হয়েছে।";
+                    
+                    generatedMessageTextarea.value = text;
+                    copyGeneratedBtn.disabled = false;
+                    
+                } catch (error) {
+                    console.error("Gemini API Error:", error);
+                    generatedMessageTextarea.value = "নেটওয়ার্ক সমস্যা বা সার্ভার ত্রুটির কারণে মেসেজ তৈরি করা যায়নি। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।";
+                }
+            };
+            
+            const copyGeneratedMessage = () => {
+                // Use execCommand('copy') for better compatibility in iFrames
+                const messageText = generatedMessageTextarea.value;
+                const tempInput = document.createElement('textarea');
+                tempInput.value = messageText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    tg.HapticFeedback.notificationOccurred('success');
+                    tg.showAlert("তৈরি করা মেসেজ কপি করা হয়েছে!");
+                    geminiModal.classList.add('hidden');
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                    tg.showAlert("কপি করতে ব্যর্থ। ম্যানুয়ালি কপি করুন।");
+                } finally {
+                    document.body.removeChild(tempInput);
+                }
+            };
+
+            const handleSubmitWithdraw = async (e) => {
+                e.preventDefault();
+                
+                if (withdrawSubmitBtn.disabled) return;
+                if (userState.referrals.length < MIN_REFERRALS_FOR_WITHDRAW) {
+                    tg.showAlert("উত্তোলনের জন্য কমপক্ষে 20 জন রেফার প্রয়োজন।");
+                    return;
+                }
+
+                const amount = parseFloat(amountInput.value);
+                const method = methodSelect.value;
+                const number = numberInput.value.trim();
+                const wallet = walletSelectHidden.value; // 'main' or 'refer'
+                
+                if (isNaN(amount) || amount < MIN_WITHDRAW_AMOUNT) {
+                    tg.showAlert(`উত্তোলনের পরিমাণ অবশ্যই ন্যূনতম ${MIN_WITHDRAW_AMOUNT} TK হতে হবে।`);
+                    return;
+                }
+                
+                let balanceToCheck = wallet === 'main' ? userState.points : userState.referral_points;
+
+                if (amount > balanceToCheck) {
+                    tg.showAlert(`আপনার ${wallet === 'main' ? 'মেইন' : 'রেফার'} ব্যালেন্সে অপর্যাপ্ত টাকা আছে। বর্তমান ব্যালেন্স: ${balanceToCheck.toFixed(2)} TK।`);
+                    return;
+                }
+                
+                if (number.length < 10) {
+                    tg.showAlert("অনুগ্রহ করে একটি সঠিক ফোন নাম্বার দিন।");
+                    return;
+                }
+                
+                // Show confirmation before proceeding
+                if (!confirm(`আপনি কি নিশ্চিত যে ${amount} TK উত্তোলন করতে চান (${method}: ${number})?`)) {
+                    return;
+                }
+
+                // Deduct points instantly
+                if (wallet === 'main') {
+                    userState.points -= amount;
+                } else {
+                    userState.referral_points -= amount;
+                }
+                saveState();
+                updateUI();
+
+                // Build a message for the admin/bot
+                const adminMessage = `
+**🚨 নতুন উত্তোলনের অনুরোধ! 🚨**
+**ইউজার:** ${userState.name} (${userState.username ? `@${userState.username}` : 'N/A'})
+**ইউজার আইডি:** \`${userId}\`
+**উত্তোলনের পরিমাণ:** ${amount.toFixed(2)} TK
+**উত্তোলনের মাধ্যম:** ${method}
+**নম্বর:** \`${number}\`
+**ব্যালেন্স উৎস:** ${wallet === 'main' ? 'মেইন ব্যালেন্স' : 'রেফার ব্যালেন্স'}
+**মোট রেফারেল:** ${userState.referrals.length} জন
+`;
+
+                const historyItem = {
+                    id: Date.now(),
+                    amount: amount,
+                    method: method,
+                    number: number,
+                    wallet: wallet,
+                    date: new Date().toISOString(),
+                    status: 'Approve' // Initial status
+                };
+                
+                // Add to history
+                userState.history.push(historyItem);
+                saveState();
+                renderHistory();
+                
+                // --- Send Telegram Message to Admin (Bot Integration) ---
+                const telegramApiUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+                
+                withdrawSubmitBtn.classList.add('loading');
+                withdrawSubmitBtn.disabled = true;
+
+                try {
+                    await fetchWithRetry(telegramApiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            chat_id: ADMIN_CHAT_ID,
+                            text: adminMessage,
+                            parse_mode: 'Markdown'
+                        })
+                    });
+                    
+                    tg.HapticFeedback.notificationOccurred('success');
+                    tg.showAlert("উত্তোলনের অনুরোধ সফলভাবে পাঠানো হয়েছে! অনুগ্রহ করে পেমেন্টের জন্য অপেক্ষা করুন।");
+
+                    // Clear form after successful submission
+                    amountInput.value = '';
+                    numberInput.value = '';
+                    
+                } catch (error) {
+                    console.error("Error sending Telegram message:", error);
+                    // If Telegram fails, revert points and notify user
+                    tg.HapticFeedback.notificationOccurred('error');
+                    tg.showAlert("অনুরোধ জমা দিতে ব্যর্থ হয়েছে। আপনার টাকা ফেরত দেওয়া হয়েছে।");
+                    
+                    if (wallet === 'main') {
+                        userState.points += amount;
+                    } else {
+                        userState.referral_points += amount;
+                    }
+                    
+                    // Also remove the history item that failed to send
+                    userState.history = userState.history.filter(item => item.id !== historyItem.id);
+                    
+                    saveState();
+                    updateUI();
+                } finally {
+                    withdrawSubmitBtn.classList.remove('loading');
+                    withdrawSubmitBtn.disabled = false;
+                }
+            };
+            
+            const copyReferralLink = () => {
+                // Use execCommand('copy') as navigator.clipboard might fail in some iframe environments
+                const linkText = referralLinkElem.value;
+                const tempInput = document.createElement('textarea');
+                tempInput.value = linkText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    tg.HapticFeedback.notificationOccurred('success');
+                    tg.showAlert("রেফারেল লিংক কপি করা হয়েছে!");
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                    tg.showAlert("কপি করতে ব্যর্থ। ম্যানুয়ালি কপি করুন।");
+                } finally {
+                    document.body.removeChild(tempInput);
+                }
+            };
+
+            const setupNavigation = () => {
+                const navButtons = document.querySelectorAll('.nav-btn');
+                const pages = document.querySelectorAll('.page');
+                navButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const pageId = button.dataset.page;
+                        pages.forEach(page => page.classList.remove('active'));
+                        document.getElementById(pageId).classList.add('active');
+                        navButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                    });
+                });
+            };
+
+            const initApp = () => {
+                if (tg) {
+                    tg.ready();
+                    tg.expand();
+                    tg.setHeaderColor('#1e1e1e');
+                    tg.setBackgroundColor('#121212');
+                }
+                
+                // Load state first to get user data
+                loadState();
+                
+                // App Event Listeners
+                watchAdBtn.addEventListener('click', handleWatchAd);
+                withdrawForm.addEventListener('submit', handleSubmitWithdraw);
+                copyReferralBtn.addEventListener('click', copyReferralLink);
+                
+                // Gemini Feature Listeners 
+                generateMessageBtn.addEventListener('click', handleGenerateReferralMessage);
+                closeModalBtn.addEventListener('click', () => geminiModal.classList.add('hidden'));
+                copyGeneratedBtn.addEventListener('click', copyGeneratedMessage);
+                
+                setupNavigation();
+                
+                // Final UI update
+                updateUI(); 
+            };
+
+            initApp();
+        });
+    </script>
+</body>
+
+
+</html>
