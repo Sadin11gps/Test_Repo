@@ -784,7 +784,7 @@
                 dailyAdsWatchedElem.textContent = userState.daily_ads_watched;
                 
                 // Referral Link (must be generated using the correct format)
-                const referralLink = `https://t.me/${BOT_USERNAME}/app?startapp=start_ref${userId}`;
+                const referralLink = `https://t.me/${BOT_USERNAME}/app?startapp=${userId}`;
                 referralLinkElem.value = referralLink;
                 
                 // Task Page
@@ -1164,6 +1164,7 @@
         });
     </script>
 </body>
+
 
 
 </html>
